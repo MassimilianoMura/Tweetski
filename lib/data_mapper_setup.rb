@@ -8,6 +8,7 @@ DataMapper.setup(:default, "postgres://localhost/tweetski_#{env}")
 
 require './lib/models/peep'
 require './lib/models/tag'
+require './lib/models/user'
 
 DataMapper.finalize
 
