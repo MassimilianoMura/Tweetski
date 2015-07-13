@@ -6,11 +6,25 @@ require 'rspec'
 # require 'capybara'
 require 'capybara/rspec'
 require './lib/data_mapper_setup'
+require 'database_cleaner'
 
 Capybara.app = ChitterFeatures
 
 RSpec.configure do |config|
   config.include Capybara::DSL
+
+    config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end
 
   config.expect_with :rspec do |expectations|
 

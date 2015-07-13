@@ -9,4 +9,8 @@ feature 'Creating peeps' do
     expect(page).to have_content('Hey lab team')
   end
 
+  scenario 'there are no peeps in the database at the start of the test' do
+  expect(Peep.count).to eq 0
+end
+
 end
