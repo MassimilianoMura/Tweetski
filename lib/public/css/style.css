@@ -1,0 +1,69 @@
+.clearfix:before, .clearfix:after {
+  content:"";
+  display:table;
+}
+
+.clearfix:after{
+  clear:both;
+}
+
+body {
+  font-size: 0;
+  color: black;
+}
+
+.box {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sixing: border-box;
+}
+
+header  {
+  height: 50px;
+  border-bottom: 1px solid blue;
+  background-color: rgba(73, 45, 255, 0.3);
+  font-size: 15px;
+}
+
+.main {
+  font-size: 15px;
+  height: 650px;
+  width: 50%;
+  background-color: rgba(192, 222, 237, 0.4);
+  float: left;
+}
+
+.left {
+  height: 650px;
+  width: 25%;
+  float: left;
+  background-color: #C0DEED ;
+}
+
+.right {
+  height: 650px;
+  width: 25%;
+  float: right;
+  background-color: #C0DEED;
+}
+
+footer {
+  background-color: #C0DEED;
+  height: 150px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+#peeps {
+  color: black;
+}
+
+#welcome-message {
+  font-size: 15px;
+}
+
+
+
