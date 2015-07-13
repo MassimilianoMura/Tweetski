@@ -7,11 +7,14 @@ require 'rspec'
 require 'capybara/rspec'
 require './lib/data_mapper_setup'
 require 'database_cleaner'
+require_relative 'helpers/session'
 
 Capybara.app = ChitterFeatures
 
 RSpec.configure do |config|
   config.include Capybara::DSL
+
+  config.include SessionHelpers
 
     config.before(:suite) do
     DatabaseCleaner.strategy = :transaction

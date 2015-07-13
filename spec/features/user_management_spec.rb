@@ -45,3 +45,17 @@ feature 'User sign in' do
  end
 
 end
+
+feature 'User sign out' do
+  
+  let(:user) do
+   User.create(email: 'user@example.com',
+               password: 'secret1234')
+  end
+
+  scenario 'while being signed in' do
+    sign_in(email: user.email,   password: user.password)
+    click_button('Sign out')
+    expect(page).to have_content "You have been signed out"
+  end
+end

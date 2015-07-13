@@ -8,6 +8,7 @@ require_relative './models/user'
 class ChitterFeatures < Sinatra::Base
   set :views, proc { File.join(root, '..', 'views') }
   register Sinatra::Flash
+  use Rack::MethodOverride
   enable :sessions
   set :session_secret, 'super secret'
 
@@ -64,13 +65,17 @@ class ChitterFeatures < Sinatra::Base
       session[:user_id] = user.id
       redirect to('/peeps')
     else
-      flash.now[:errors] = ['The email or password is incorrect']
+      flash.now[:error] = ['The email or password is incorrect']
       erb :'sessions/new'
+    end
   end
+
+  delete '/sessions' do
+    
+    flash.now[:error] = 'You have been signed out'
+    session[:user_id] = nil
+    erb :'/sessions/new'
   end
-
-
-
 
   helpers do
     def current_user
