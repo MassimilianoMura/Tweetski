@@ -6,6 +6,13 @@ feature 'User sign up' do
     expect(User.first.email).to eq('alice@example.com')
   end
 
+  scenario 'cannot sign up with existing email address' do
+    visit '/users/new'
+    sign_up
+    expect { sign_up }.not_to change(User, :count)
+    expect(page).to have_content("Email address already in use")
+  end
+
   def sign_up(email: 'alice@example.com',
               password: 'oranges!')
     visit '/users/new'
