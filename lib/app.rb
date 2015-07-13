@@ -18,11 +18,19 @@ class ChitterFeatures < Sinatra::Base
   post '/peeps' do
     peep = Peep.new(message: params[:message])
     tags = params[:tag].split(" ")
+
     tags.each do |tag|
       peep.tags <<  Tag.create(name: tag)
     end
+
     peep.save
     redirect to('/peeps')
+  end
+
+  get '/tags/:name' do
+    tag = Tag.first(name: params[:name])
+    @peeps = tag ? tag.peeps : []
+    erb :'peeps/peeps'
   end
 
 
