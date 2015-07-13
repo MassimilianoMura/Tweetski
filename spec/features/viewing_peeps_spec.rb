@@ -13,4 +13,5 @@ feature 'Viewing peeps' do
       expect(page).to have_content('This app is awesome!!!')
     end
   end
+
 end
