@@ -7,7 +7,7 @@ env = ENV['RACK_ENV'] || 'development'
 DataMapper.setup(:default, "postgres://localhost/tweetski_#{env}")
 
 require './lib/models/peep'
-
+require './lib/models/tag'
 
 DataMapper.finalize
 

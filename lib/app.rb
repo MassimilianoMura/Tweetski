@@ -16,7 +16,12 @@ class ChitterFeatures < Sinatra::Base
   end
 
   post '/peeps' do
-    Peep.create(message: params[:message])
+    peep = Peep.new(message: params[:message])
+    tags = params[:tag].split(" ")
+    tags.each do |tag|
+      peep.tags <<  Tag.create(name: tag)
+    end
+    peep.save
     redirect to('/peeps')
   end
 
