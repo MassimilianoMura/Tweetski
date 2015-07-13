@@ -18,11 +18,11 @@ class ChitterFeatures < Sinatra::Base
   end
 
   get '/peeps/new' do
-    erb :'peeps/new'
+    erb :'peeps/peeps'
   end
 
   post '/peeps' do
-    peep = Peep.new(message: params[:message])
+    peep = Peep.new(message: params[:message], time: Time.now)
     tags = params[:tag].split(" ")
 
     tags.each do |tag|

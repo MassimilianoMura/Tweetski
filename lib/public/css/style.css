@@ -62,13 +62,7 @@ h3 {
   font-size: 15px;
 }
 
-#new_peep {
-  margin: 30px;
-  padding: 20px;
-  border: 2px solid rgba(192, 222, 237, 0.6);
-  text-align: center;
-  background-color: rgba(192, 222, 237, 0.7);
-}
+
 
 #sign_up {
   margin: 30px;
@@ -78,4 +72,29 @@ h3 {
   background-color: rgba(192, 222, 237, 0.7);
 }
 
+.message {
+  border: 2px solid rgba(73, 45, 255, 0.2);
+  background-color: rgba(73, 45, 255, 0.1);
+  text-align: center;
+}
 
+.peep-box {
+  margin: 30px;
+  padding: 0px 20px;
+  text-align: left;
+}
+
+#new_peep {
+  border: 2px solid rgba(192, 222, 237, 0.6);
+  background-color: rgba(192, 222, 237, 0.7);
+}
+
+.msg-text {
+  text-align: left;
+  font-size: 24px;
+}
+
+.msg-time {
+  text-align: right;
+  font-style: italic;
+}

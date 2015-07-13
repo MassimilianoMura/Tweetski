@@ -1,5 +1,16 @@
-<ul id='peeps'>
-  <% @peeps.each do |peep| %>
-    <li><%= peep.message %></li>
+<div id="sign_up" class='peep-box'>
+<form method="POST" action="/peeps">
+  <label for="message">Enter peep</label>
+  <input type="text" name="message">
+  <input type="text" name="tag">
+  <input type="submit" value="Post peep">
+</form>
+</div>
+<div id='peeps'>
+  <% @peeps.reverse.each do |peep| %>
+    <div class="message peep-box">
+      <p class ="msg-text"><%= peep.message %></p>
+      <p class ="msg-time"><%= peep.post_time %></p>
+    </div>
   <% end %>
-</ul>
+</div>

@@ -17,7 +17,7 @@ feature 'Viewing peeps' do
     visit '/peeps'
     expect(page.status_code).to eq 200
 
-    within 'ul#peeps' do
+    within 'div#peeps' do
       expect(page).to have_content('This app is awesome!!!')
     end
   end
@@ -26,7 +26,7 @@ feature 'Viewing peeps' do
   scenario 'I can filter peeps by tag' do
 
   visit '/tags/lab'
-  within 'ul#peeps' do
+  within 'div#peeps' do
     expect(page).not_to have_content('This app is awesome')
     expect(page).to have_content('I love lab week')
   end
