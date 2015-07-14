@@ -10,16 +10,7 @@ feature 'User sign up' do
     visit '/users/new'
     sign_up
     expect { sign_up }.not_to change(User, :count)
-    expect(page).to have_content("Email address already in use")
-  end
-
-  def sign_up(email: 'alice@example.com',
-              password: 'oranges!')
-    visit '/users/new'
-    expect(page.status_code).to eq(200)
-    fill_in :email,    with: email
-    fill_in :password, with: password
-    click_button 'Sign up'
+    expect(page).to have_content("Email address or username already in use")
   end
 
 end
@@ -28,20 +19,14 @@ end
 feature 'User sign in' do
 
  let(:user) do
-   User.create(email: 'user@example.com',
-               password: 'secret1234')
+   User.create(email: 'alice@example.com',
+               password: 'oranges!')
  end
 
  scenario 'with correct credentials' do
+   sign_up
    sign_in(email: user.email,   password: user.password)
    expect(page).to have_content "Welcome, #{user.email}"
- end
-
- def sign_in(email:, password:)
-   visit '/sessions/new'
-   fill_in :email,    with: email
-   fill_in :password, with: password
-   click_button 'Sign in'
  end
 
 end
@@ -54,6 +39,7 @@ feature 'User sign out' do
   end
 
   scenario 'while being signed in' do
+    sign_up
     sign_in(email: user.email,   password: user.password)
     click_button('Sign out')
     expect(page).to have_content "You have been signed out"
