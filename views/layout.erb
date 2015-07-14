@@ -23,9 +23,6 @@
         <input type="submit" value="Sign out">
       </form>
       <% end %>
-      <% if flash[:error] %>
-        <%= flash[:error] %>
-      <% end %>
 
     </div>
     <div class="logo header">
@@ -48,6 +45,9 @@
     </div>
 
     <div class="main box">
+      <% if flash[:error] %>
+        <div class="error"> <%= flash[:error] %> </div>
+      <% end %>
       <%= yield %>
     </div>
 
