@@ -1,11 +1,14 @@
-<div id="sign_up" class='peep-box'>
+<div id='new_peep'>
+
 <form method="POST" action="/peeps">
-  <label for="message">Enter peep</label>
-  <input type="text" name="message">
-  <input type="text" name="tag">
+  <!-- <label for="message">Enter peep</label> -->
+  <input type="text" name="message" size="72" placeholder="Enter a peep">
+  <input type="text" name="tag" size="10" placeholder="Tag">
   <input type="submit" value="Post peep">
 </form>
+
 </div>
+
 <div id='peeps'>
   <% @peeps.reverse.each do |peep| %>
     <div class="message peep-box">

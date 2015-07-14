@@ -13,25 +13,26 @@
 
   <header class="box clearfix">
     <div class="header welcome">
-    
+      &nbsp;
       <% if current_user %>
         <span id='welcome-message'>
           Welcome, <%= current_user.email %>
         </span>
+        <form method='post' action='/sessions'>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Sign out">
+      </form>
       <% end %>
       <% if flash[:error] %>
         <%= flash[:error] %>
       <% end %>
-      <form method='post' action='/sessions'>
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Sign out">
-      </form>
+
     </div>
     <div class="logo header">
       <a href="../peeps"><img src="/images/logo_tweetski.gif" width="140"></a>
     </div>
-    <div class="nav header">
-      
+    <div class="nav header box">
+
       <nav>
         <a href="../sessions/new">Sign in</a>
         <a href="../users/new">Sign up</a>

@@ -15,7 +15,15 @@ body {
 
 nav a {
   text-decoration: none;
+  margin-right: 20px;
 }
+
+nav a:hover {
+  text-decoration: none;
+  margin-right: 20px;
+  color: green;
+}
+
 .box {
   -ms-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -74,9 +82,7 @@ h3 {
   font-size: 15px;
 }
 
-
-
-#sign_up {
+.sign {
   margin: 30px;
   padding: 15px;
   border: 2px solid rgba(192, 222, 237, 0.6);
@@ -104,8 +110,12 @@ h3 {
 }
 
 #new_peep {
+  font-size: 1.4em;
   border: 2px solid rgba(192, 222, 237, 0.6);
-  background-color: rgba(192, 222, 237, 0.7);
+  background-color: rgba(0, 165, 77, 0.2);
+  margin: 30px;
+  padding: 25px;
+  text-align: left;
 }
 
 .msg-text {
@@ -130,4 +140,9 @@ h3 {
 
 .nav {
   padding-top: 10px;
+  font-size: 1.5em;
 }
+
+
+
+
