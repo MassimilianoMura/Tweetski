@@ -3,6 +3,8 @@ require 'spec_helper'
 feature 'Adding tags' do
 
   scenario 'I can add a single tag to a new peep' do
+    sign_up(email: 'alice@example.com',
+              password: 'oranges!')
     visit '/peeps'
     fill_in 'message', with: 'Hey lab team'
     fill_in 'tag', with: 'lab'

@@ -3,17 +3,16 @@ require 'spec_helper'
 feature 'Viewing peeps' do
 
   before(:each) do
-
+  new_user = User.create
   Peep.create(message: 'This app is awesome!!!',
-                tags: [Tag.first_or_create(name: 'funny')])
+                tags: [Tag.first_or_create(name: 'funny')], user_id: new_user.id)
 
   Peep.create(message: 'I love lab week',
-                tags: [Tag.first_or_create(name: 'lab')])
+                tags: [Tag.first_or_create(name: 'lab')], user_id: new_user.id)
   end
 
 
   scenario 'I can see existing peeps on the main peeps page' do
-
     visit '/peeps'
     expect(page.status_code).to eq 200
 

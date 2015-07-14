@@ -12,6 +12,7 @@
 <div id='peeps'>
   <% @peeps.reverse.each do |peep| %>
     <div class="message peep-box">
+      <p class ="msg-username"><strong><%= User.get(peep.user_id).username %></strong></p>
       <p class ="msg-text"><%= peep.message %></p>
       <p class ="msg-time"><%= peep.post_time %></p>
     </div>

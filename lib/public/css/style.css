@@ -143,6 +143,13 @@ h3 {
   font-style: italic;
 }
 
+.msg-username {
+  font-weight: bold;
+  font-size: 1.5em;
+  color:rgba(230,0,0,4);
+  margin-bottom: 6px;
+}
+
 .header {
   float:left;
   width:33%;

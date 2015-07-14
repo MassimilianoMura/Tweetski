@@ -7,6 +7,7 @@ class Peep
   property :post_time, String
 
   has n, :tags, through: Resource
+  belongs_to :user
 
   def time=(time)
     self.post_time = "#{time.hour}:#{time.min} #{time.day}/#{time.month}/#{time.year}"
