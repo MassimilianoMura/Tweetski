@@ -22,15 +22,20 @@ class ChitterFeatures < Sinatra::Base
   end
 
   post '/peeps' do
-    peep = Peep.new(message: params[:message], time: Time.now, user_id: current_user.id)
-    tags = params[:tag].split(" ")
+    if session[:user_id]
+      peep = Peep.new(message: params[:message], time: Time.now, user_id: current_user.id)
+      tags = params[:tag].split(" ")
 
-    tags.each do |tag|
-      peep.tags <<  Tag.create(name: tag)
-    end
+      tags.each do |tag|
+        peep.tags <<  Tag.create(name: tag)
+      end
 
-    peep.save
-    redirect to('/peeps')
+      peep.save
+      redirect to('/peeps')
+    else
+      flash.now[:error] = 'You must be logged in to peep'
+      erb :'/sessions/new'
+    end 
   end
 
   get '/tags/:name' do
