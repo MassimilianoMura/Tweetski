@@ -41,7 +41,7 @@ header  {
 
 .main {
   font-size: 15px;
-  height: 620px;
+  height: 1300px;
   width: 50%;
   background-color: rgba(192, 222, 237, 0.4);
   float: left;
@@ -49,23 +49,24 @@ header  {
 }
 
 .left {
-  height: 620px;
+  height: 1300px;
   width: 25%;
   float: left;
   background-color: #C0DEED ;
 }
 
 .right {
-  height: 620px;
+  height: 1300px;
   width: 25%;
   float: right;
   background-color: #C0DEED;
 }
 
 footer  {
-  height: 50px;
-  border-top: 1px solid rgba(73, 45, 255, 0.4);;
-  background-color: rgba(73, 45, 255, 0.2);
+  height: 40px;
+  border-top: 1px solid rgba(73, 45, 255, 0.4);
+  background-color: rgba(0, 165, 77, 0.1);
+  /*background-color: rgba(73, 45, 255, 0.2);*/
   font-size: 15px;
 }
 
@@ -160,7 +161,6 @@ h3 {
 
 button {
   margin-top: 6px;
-
   text-decoration:none; text-align:center;
   padding:6px 6px;
   border:solid 1px #004F72;
