@@ -21,32 +21,41 @@ body {
 }
 
 header  {
-  height: 50px;
+  height: 70px;
   border-bottom: 1px solid blue;
   background-color: rgba(73, 45, 255, 0.3);
   font-size: 15px;
+  padding: 10px;
 }
 
 .main {
   font-size: 15px;
-  height: 650px;
+  height: 620px;
   width: 50%;
   background-color: rgba(192, 222, 237, 0.4);
   float: left;
+  overflow: scroll;
 }
 
 .left {
-  height: 650px;
+  height: 620px;
   width: 25%;
   float: left;
   background-color: #C0DEED ;
 }
 
 .right {
-  height: 650px;
+  height: 620px;
   width: 25%;
   float: right;
   background-color: #C0DEED;
+}
+
+footer  {
+  height: 50px;
+  border-top: 1px solid rgba(73, 45, 255, 0.4);;
+  background-color: rgba(73, 45, 255, 0.2);
+  font-size: 15px;
 }
 
 
@@ -66,7 +75,7 @@ h3 {
 
 #sign_up {
   margin: 30px;
-  padding: 20px;
+  padding: 15px;
   border: 2px solid rgba(192, 222, 237, 0.6);
   text-align: center;
   background-color: rgba(192, 222, 237, 0.7);
@@ -80,8 +89,15 @@ h3 {
 
 .peep-box {
   margin: 30px;
-  padding: 0px 20px;
+  padding: 20px;
   text-align: left;
+}
+
+.peep-box:hover {
+  margin: 30px;
+  text-align: left;
+  background-color: rgba(231, 229, 228, 0.5);
+  border: 2px solid rgba(192, 222, 237, 0.4);
 }
 
 #new_peep {
