@@ -79,7 +79,8 @@ h3 {
 }
 
 #welcome-message {
-  font-size: 15px;
+  font-size: 20px;
+  line-height: 18px;
 }
 
 .sign {
@@ -88,6 +89,10 @@ h3 {
   border: 2px solid rgba(192, 222, 237, 0.6);
   text-align: center;
   background-color: rgba(192, 222, 237, 0.7);
+}
+
+.sign h3 {
+  padding-bottom: 12px;
 }
 
 .message {
@@ -153,5 +158,16 @@ h3 {
 }
 
 
+button {
+  margin-top: 6px;
 
+  text-decoration:none; text-align:center;
+  padding:6px 6px;
+  border:solid 1px #004F72;
+  border-radius: 4px;
+  font:12px "Lucida Console", Monaco, monospace;
+  font-weight:bold;
+  color:#E5FFFF;
+  background-color: rgba(50,155,190,1);
+}
 

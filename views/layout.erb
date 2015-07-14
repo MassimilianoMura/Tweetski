@@ -12,6 +12,7 @@
 <body>
 
   <header class="box clearfix">
+
     <div class="header welcome">
       &nbsp;
       <% if current_user %>
@@ -20,11 +21,11 @@
         </span>
         <form method='post' action='/sessions'>
         <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Sign out">
+        <button input type="submit" value="Sign out">Sign out</button>
       </form>
       <% end %>
-
     </div>
+
     <div class="logo header">
       <a href="../peeps"><img src="/images/logo_tweetski.gif" width="140"></a>
     </div>
