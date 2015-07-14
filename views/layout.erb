@@ -12,19 +12,33 @@
 <body>
 
   <header class="box clearfix">
+    <div class="header welcome">
+    
+      <% if current_user %>
+        <span id='welcome-message'>
+          Welcome, <%= current_user.email %>
+        </span>
+      <% end %>
+      <% if flash[:error] %>
+        <%= flash[:error] %>
+      <% end %>
+      <form method='post' action='/sessions'>
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Sign out">
+      </form>
+    </div>
+    <div class="logo header">
+      <a href="../peeps"><img src="/images/logo_tweetski.gif" width="140"></a>
+    </div>
+    <div class="nav header">
+      
+      <nav>
+        <a href="../sessions/new">Sign in</a>
+        <a href="../users/new">Sign up</a>
+        <a href="../peeps">Home</a>
+      </nav>
 
-    <% if current_user %>
-    <span id='welcome-message'>
-      Welcome, <%= current_user.email %>
-      </span>
-    <% end %>
-    <form method='post' action='/sessions'>
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Sign out">
-    </form>
-    <% if flash[:error] %>
-      <%= flash[:error] %>
-    <% end %>
+    </div>
   </header>
 
   <div class="clearfix box">
